@@ -156,7 +156,8 @@ public class CrowdLoginModule implements LoginModule {
 
 			// create Jetty JAASRole
 			rolePrincipals = getUserGroups(currentUser.name);
-
+			rolePrincipals.add(new JAASRole("user"));
+			
 			// update Subject
 			subject.getPrincipals().add(userPrincipal);
 			subject.getPrincipals().addAll(rolePrincipals);
